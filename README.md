@@ -2,7 +2,7 @@
 Project cho nhóm 2 năm học 2019 - 2020 - IT.HUSC
 Nhóm 2
 
-Nguyễn Đức Nghĩa
+Nguyễn Đức Nghĩa (TN)
 
 Đỗ Thanh Tân
 
