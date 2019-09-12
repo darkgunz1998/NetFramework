@@ -4,9 +4,9 @@ Nhóm 2
 
 Nguyễn Đức Nghĩa
 
-Trần Phạm Quỳnh Như
-
 Đỗ Thanh Tân
+
+Trần Phạm Quỳnh Như
 
 Ngô Hoàng Đức Phúc
 
