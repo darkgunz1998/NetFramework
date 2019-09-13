@@ -24,9 +24,13 @@ namespace AppG2
 
             pathDirectoryImg = Application.StartupPath + "/Img";
             pathAvatarImg = pathDirectoryImg + "/avatar.png";
+            picAvatar.AllowDrop = true;
             if (File.Exists(pathAvatarImg))
             {
-                picAvatar.Image = Image.FromFile(pathAvatarImg);
+                FileStream fileStream = new FileStream(pathAvatarImg, FileMode.Open, FileAccess.Read);
+
+                picAvatar.Image = Image.FromStream(fileStream);
+                fileStream.Close();
             }
         }
         
@@ -45,6 +49,7 @@ namespace AppG2
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             #region cập nhật ảnh đại diện
+            bool imageSave = false;
             if(Image != null)
             {             
                if ( !Directory.Exists(pathDirectoryImg))
@@ -52,8 +57,32 @@ namespace AppG2
                     Directory.CreateDirectory(pathDirectoryImg);
                 }
                 Image.Save(pathAvatarImg);
+                imageSave = true;
+            }
+            if (imageSave)
+            {
+                MessageBox.Show("Cập nhật thông tin thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             #endregion
         }
+
+        private void picAvatar_DragDrop(object sender, DragEventArgs e)
+        {
+            var rs = (string[])e.Data.GetData(DataFormats.FileDrop);
+            var filePath = rs.FirstOrDefault();
+            picAvatar.Image = Image.FromFile(filePath);
+        }
+
+        private void picAvatar_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Copy;
+        }
+
+        private void mnIXoaAvt_Click(object sender, EventArgs e)
+        {
+            picAvatar.Image = Properties.Resources.avatar;
+            File.Delete(pathAvatarImg);
+        }
     }
 }
+    

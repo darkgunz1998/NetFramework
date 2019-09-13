@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -55,11 +56,14 @@
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.picAvatar = new System.Windows.Forms.PictureBox();
+            this.menuAvatar = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnIXoaAvt = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
+            this.menuAvatar.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -319,6 +323,7 @@
             // 
             // picAvatar
             // 
+            this.picAvatar.ContextMenuStrip = this.menuAvatar;
             this.picAvatar.Image = global::AppG2.Properties.Resources.avatar;
             this.picAvatar.Location = new System.Drawing.Point(563, 20);
             this.picAvatar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -327,6 +332,24 @@
             this.picAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picAvatar.TabIndex = 0;
             this.picAvatar.TabStop = false;
+            this.picAvatar.DragDrop += new System.Windows.Forms.DragEventHandler(this.picAvatar_DragDrop);
+            this.picAvatar.DragEnter += new System.Windows.Forms.DragEventHandler(this.picAvatar_DragEnter);
+            // 
+            // menuAvatar
+            // 
+            this.menuAvatar.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuAvatar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnIXoaAvt});
+            this.menuAvatar.Name = "menuAvatar";
+            this.menuAvatar.Size = new System.Drawing.Size(215, 58);
+            // 
+            // mnIXoaAvt
+            // 
+            this.mnIXoaAvt.Image = global::AppG2.Properties.Resources.delete;
+            this.mnIXoaAvt.Name = "mnIXoaAvt";
+            this.mnIXoaAvt.Size = new System.Drawing.Size(214, 26);
+            this.mnIXoaAvt.Text = "Xóa ảnh đại diện";
+            this.mnIXoaAvt.Click += new System.EventHandler(this.mnIXoaAvt_Click);
             // 
             // frmThongTinSinhVien
             // 
@@ -361,6 +384,7 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
+            this.menuAvatar.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -395,5 +419,7 @@
         private System.Windows.Forms.LinkLabel lblChonAnh;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnCapNhat;
+        private System.Windows.Forms.ContextMenuStrip menuAvatar;
+        private System.Windows.Forms.ToolStripMenuItem mnIXoaAvt;
     }
 }
