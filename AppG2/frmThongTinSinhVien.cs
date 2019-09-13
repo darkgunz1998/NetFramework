@@ -32,7 +32,7 @@ namespace AppG2
                 picAvatar.Image = Image.FromStream(fileStream);
                 fileStream.Close();
             }
-        }
+        } 
         
         private void lblChonAnh_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
