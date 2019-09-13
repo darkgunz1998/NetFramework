@@ -70,7 +70,8 @@ namespace AppG2
         {
             var rs = (string[])e.Data.GetData(DataFormats.FileDrop);
             var filePath = rs.FirstOrDefault();
-            picAvatar.Image = Image.FromFile(filePath);
+            Image = Image.FromFile(filePath);
+            picAvatar.Image = Image;
         }
 
         private void picAvatar_DragEnter(object sender, DragEventArgs e)
