@@ -1,0 +1,11 @@
+C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\bin\Debug\AppG2.exe.config
+C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\bin\Debug\AppG2.exe
+C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\bin\Debug\AppG2.pdb
+C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.csprojAssemblyReference.cache
+C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.frmThongTinSinhVien.resources
+C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.frmTinhToanCoBan.resources
+C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.Properties.Resources.resources
+C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.csproj.GenerateResource.cache
+C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.exe
+C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.pdb
