@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using AppG2.View;
 namespace AppG2
 {
     static class Program
@@ -16,7 +16,7 @@ namespace AppG2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmThongTinSinhVien());
+            Application.Run(new frmThongTinSinhVien("16T1021104"));
         }
     }
 }

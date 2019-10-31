@@ -1,4 +1,4 @@
-﻿namespace AppG2
+﻿namespace AppG2.View
 {
     partial class frmThongTinSinhVien
     {
@@ -31,39 +31,42 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cbGender = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtQueQuan = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.dtpNamSinh = new System.Windows.Forms.DateTimePicker();
+            this.txtMaSV = new System.Windows.Forms.TextBox();
+            this.txtHo = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgvQuaTrinhHocTap = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.btnDelete = new System.Windows.Forms.ToolStripButton();
+            this.btnEdit = new System.Windows.Forms.ToolStripButton();
+            this.btnAdd = new System.Windows.Forms.ToolStripButton();
             this.lblChonAnh = new System.Windows.Forms.LinkLabel();
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.picAvatar = new System.Windows.Forms.PictureBox();
             this.menuAvatar = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnIXoaAvt = new System.Windows.Forms.ToolStripMenuItem();
+            this.bdsQuaTrinhHocTap = new System.Windows.Forms.BindingSource(this.components);
+            this.txtTen = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvQuaTrinhHocTap)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
             this.menuAvatar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsQuaTrinhHocTap)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -82,20 +85,20 @@
             this.label3.Location = new System.Drawing.Point(16, 43);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 17);
+            this.label3.Size = new System.Drawing.Size(34, 17);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Họ và tên:";
+            this.label3.Text = "Họ :";
             // 
-            // checkBox1
+            // cbGender
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(145, 71);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(59, 21);
-            this.checkBox1.TabIndex = 3;
-            this.checkBox1.Text = "Nam";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbGender.AutoSize = true;
+            this.cbGender.Location = new System.Drawing.Point(145, 71);
+            this.cbGender.Margin = new System.Windows.Forms.Padding(4);
+            this.cbGender.Name = "cbGender";
+            this.cbGender.Size = new System.Drawing.Size(59, 21);
+            this.cbGender.TabIndex = 3;
+            this.cbGender.Text = "Nam";
+            this.cbGender.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -117,14 +120,14 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "Quê quán:";
             // 
-            // textBox1
+            // txtQueQuan
             // 
-            this.textBox1.Location = new System.Drawing.Point(145, 133);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(380, 64);
-            this.textBox1.TabIndex = 4;
+            this.txtQueQuan.Location = new System.Drawing.Point(145, 133);
+            this.txtQueQuan.Margin = new System.Windows.Forms.Padding(4);
+            this.txtQueQuan.Multiline = true;
+            this.txtQueQuan.Name = "txtQueQuan";
+            this.txtQueQuan.Size = new System.Drawing.Size(380, 64);
+            this.txtQueQuan.TabIndex = 4;
             // 
             // label7
             // 
@@ -136,31 +139,33 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "Ngày sinh:";
             // 
-            // dateTimePicker1
+            // dtpNamSinh
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(145, 101);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(156, 22);
-            this.dateTimePicker1.TabIndex = 5;
+            this.dtpNamSinh.CustomFormat = "dd/MM/yyyy";
+            this.dtpNamSinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNamSinh.Location = new System.Drawing.Point(145, 101);
+            this.dtpNamSinh.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpNamSinh.Name = "dtpNamSinh";
+            this.dtpNamSinh.Size = new System.Drawing.Size(156, 22);
+            this.dtpNamSinh.TabIndex = 5;
             // 
-            // textBox2
+            // txtMaSV
             // 
-            this.textBox2.Location = new System.Drawing.Point(145, 7);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(380, 22);
-            this.textBox2.TabIndex = 6;
+            this.txtMaSV.Location = new System.Drawing.Point(145, 7);
+            this.txtMaSV.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaSV.Name = "txtMaSV";
+            this.txtMaSV.Size = new System.Drawing.Size(380, 22);
+            this.txtMaSV.TabIndex = 6;
+            this.txtMaSV.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // textBox3
+            // txtHo
             // 
-            this.textBox3.Location = new System.Drawing.Point(145, 39);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(380, 22);
-            this.textBox3.TabIndex = 6;
+            this.txtHo.Location = new System.Drawing.Point(145, 39);
+            this.txtHo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtHo.Name = "txtHo";
+            this.txtHo.Size = new System.Drawing.Size(122, 22);
+            this.txtHo.TabIndex = 6;
+            this.txtHo.TextChanged += new System.EventHandler(this.txtHoTen_TextChanged);
             // 
             // panel1
             // 
@@ -168,48 +173,48 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dtgvQuaTrinhHocTap);
             this.panel1.Controls.Add(this.statusStrip1);
             this.panel1.Controls.Add(this.toolStrip1);
             this.panel1.Location = new System.Drawing.Point(20, 206);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(701, 318);
             this.panel1.TabIndex = 7;
             // 
-            // dataGridView1
+            // dtgvQuaTrinhHocTap
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgvQuaTrinhHocTap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvQuaTrinhHocTap.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
-            this.Column2,
             this.Column3,
             this.Column4});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 27);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(699, 264);
-            this.dataGridView1.TabIndex = 0;
+            this.dtgvQuaTrinhHocTap.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvQuaTrinhHocTap.Location = new System.Drawing.Point(0, 27);
+            this.dtgvQuaTrinhHocTap.Margin = new System.Windows.Forms.Padding(4);
+            this.dtgvQuaTrinhHocTap.MultiSelect = false;
+            this.dtgvQuaTrinhHocTap.Name = "dtgvQuaTrinhHocTap";
+            this.dtgvQuaTrinhHocTap.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvQuaTrinhHocTap.Size = new System.Drawing.Size(699, 264);
+            this.dtgvQuaTrinhHocTap.TabIndex = 0;
             // 
             // Column1
             // 
+            this.Column1.DataPropertyName = "IDHistoryLearning";
             this.Column1.HeaderText = "STT";
             this.Column1.Name = "Column1";
             // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Từ năm";
-            this.Column2.Name = "Column2";
-            // 
             // Column3
             // 
-            this.Column3.HeaderText = "Đến năm";
+            this.Column3.DataPropertyName = "Period";
+            this.Column3.HeaderText = "Thời gian học";
             this.Column3.Name = "Column3";
+            this.Column3.Width = 200;
             // 
             // Column4
             // 
             this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.DataPropertyName = "Address";
             this.Column4.HeaderText = "Địa chỉ";
             this.Column4.Name = "Column4";
             // 
@@ -236,9 +241,9 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
-            this.toolStripButton3,
-            this.toolStripButton2,
-            this.toolStripButton1});
+            this.btnDelete,
+            this.btnEdit,
+            this.btnAdd});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(699, 27);
@@ -251,32 +256,35 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(124, 24);
             this.toolStripLabel1.Text = "Quá trình học tập";
             // 
-            // toolStripButton3
+            // btnDelete
             // 
-            this.toolStripButton3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButton3.Image = global::AppG2.Properties.Resources.delete;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(59, 24);
-            this.toolStripButton3.Text = "Xóa";
+            this.btnDelete.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnDelete.Image = global::AppG2.Properties.Resources.delete;
+            this.btnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(59, 24);
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // toolStripButton2
+            // btnEdit
             // 
-            this.toolStripButton2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButton2.Image = global::AppG2.Properties.Resources.edit;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(58, 24);
-            this.toolStripButton2.Text = "Sửa";
+            this.btnEdit.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnEdit.Image = global::AppG2.Properties.Resources.edit;
+            this.btnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(58, 24);
+            this.btnEdit.Text = "Sửa";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // toolStripButton1
+            // btnAdd
             // 
-            this.toolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButton1.Image = global::AppG2.Properties.Resources.add;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(70, 24);
-            this.toolStripButton1.Text = "Thêm";
+            this.btnAdd.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnAdd.Image = global::AppG2.Properties.Resources.add;
+            this.btnAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(70, 24);
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lblChonAnh
             // 
@@ -297,7 +305,7 @@
             this.btnCapNhat.Image = global::AppG2.Properties.Resources.update;
             this.btnCapNhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCapNhat.Location = new System.Drawing.Point(471, 529);
-            this.btnCapNhat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCapNhat.Margin = new System.Windows.Forms.Padding(4);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(128, 41);
             this.btnCapNhat.TabIndex = 9;
@@ -313,7 +321,7 @@
             this.button1.Image = global::AppG2.Properties.Resources.deleete2;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(607, 529);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 41);
             this.button1.TabIndex = 9;
@@ -326,7 +334,7 @@
             this.picAvatar.ContextMenuStrip = this.menuAvatar;
             this.picAvatar.Image = global::AppG2.Properties.Resources.avatar;
             this.picAvatar.Location = new System.Drawing.Point(563, 20);
-            this.picAvatar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picAvatar.Margin = new System.Windows.Forms.Padding(4);
             this.picAvatar.Name = "picAvatar";
             this.picAvatar.Size = new System.Drawing.Size(155, 149);
             this.picAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -341,50 +349,72 @@
             this.menuAvatar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnIXoaAvt});
             this.menuAvatar.Name = "menuAvatar";
-            this.menuAvatar.Size = new System.Drawing.Size(215, 58);
+            this.menuAvatar.Size = new System.Drawing.Size(195, 30);
             // 
             // mnIXoaAvt
             // 
             this.mnIXoaAvt.Image = global::AppG2.Properties.Resources.delete;
             this.mnIXoaAvt.Name = "mnIXoaAvt";
-            this.mnIXoaAvt.Size = new System.Drawing.Size(214, 26);
+            this.mnIXoaAvt.Size = new System.Drawing.Size(194, 26);
             this.mnIXoaAvt.Text = "Xóa ảnh đại diện";
             this.mnIXoaAvt.Click += new System.EventHandler(this.mnIXoaAvt_Click);
+            // 
+            // txtTen
+            // 
+            this.txtTen.Location = new System.Drawing.Point(399, 39);
+            this.txtTen.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTen.Name = "txtTen";
+            this.txtTen.Size = new System.Drawing.Size(126, 22);
+            this.txtTen.TabIndex = 11;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(320, 44);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 17);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Tên :";
             // 
             // frmThongTinSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(733, 575);
+            this.Controls.Add(this.txtTen);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnCapNhat);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblChonAnh);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.txtHo);
+            this.Controls.Add(this.txtMaSV);
+            this.Controls.Add(this.dtpNamSinh);
+            this.Controls.Add(this.txtQueQuan);
+            this.Controls.Add(this.cbGender);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.picAvatar);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmThongTinSinhVien";
             this.Text = "Thông tin sinh viên";
+            this.Load += new System.EventHandler(this.frmThongTinSinhVien_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvQuaTrinhHocTap)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
             this.menuAvatar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bdsQuaTrinhHocTap)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -395,31 +425,33 @@
         private System.Windows.Forms.PictureBox picAvatar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox cbGender;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtQueQuan;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.DateTimePicker dtpNamSinh;
+        private System.Windows.Forms.TextBox txtMaSV;
+        private System.Windows.Forms.TextBox txtHo;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridView dtgvQuaTrinhHocTap;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton btnAdd;
+        private System.Windows.Forms.ToolStripButton btnEdit;
+        private System.Windows.Forms.ToolStripButton btnDelete;
         private System.Windows.Forms.LinkLabel lblChonAnh;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnCapNhat;
         private System.Windows.Forms.ContextMenuStrip menuAvatar;
         private System.Windows.Forms.ToolStripMenuItem mnIXoaAvt;
+        private System.Windows.Forms.BindingSource bdsQuaTrinhHocTap;
+        private System.Windows.Forms.TextBox txtTen;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

@@ -46,11 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmThongTinSinhVien.cs">
+    <Compile Include="Controller\StudentService.cs" />
+    <Compile Include="View\frmQuaTrinhHocTapChiTiet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThongTinSinhVien.Designer.cs">
+    <Compile Include="View\frmQuaTrinhHocTapChiTiet.Designer.cs">
+      <DependentUpon>frmQuaTrinhHocTapChiTiet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmThongTinSinhVien.cs">
+      <SubType>Form</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="View\frmThongTinSinhVien.Designer.cs">
       <DependentUpon>frmThongTinSinhVien.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="frmTinhToanCoBan.cs">
       <SubType>Form</SubType>
@@ -58,10 +67,16 @@
     <Compile Include="frmTinhToanCoBan.Designer.cs">
       <DependentUpon>frmTinhToanCoBan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\HistoryLearning.cs" />
+    <Compile Include="Model\Student.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmThongTinSinhVien.resx">
+    <EmbeddedResource Include="View\frmQuaTrinhHocTapChiTiet.resx">
+      <DependentUpon>frmQuaTrinhHocTapChiTiet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmThongTinSinhVien.resx">
       <DependentUpon>frmThongTinSinhVien.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTinhToanCoBan.resx">
       <DependentUpon>frmTinhToanCoBan.cs</DependentUpon>
@@ -112,6 +127,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\deleete2.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Data\historylearning.txt" />
+    <Content Include="Data\student.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

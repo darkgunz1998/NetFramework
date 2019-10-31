@@ -2,10 +2,15 @@ C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\bin\Debug\AppG2.ex
 C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\bin\Debug\AppG2.exe
 C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\bin\Debug\AppG2.pdb
 C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.csprojAssemblyReference.cache
-C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.frmThongTinSinhVien.resources
 C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.frmTinhToanCoBan.resources
 C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.Properties.Resources.resources
 C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.csproj.GenerateResource.cache
 C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.csproj.CoreCompileInputs.cache
 C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.exe
 C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.pdb
+C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.View.frmThongTinSinhVien.resources
+C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\bin\Debug\Data\student.txt
+C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\bin\Debug\View\frmThongTinSinhVien.resx
+C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\bin\Debug\View\frmThongTinSinhVien.cs
+C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\bin\Debug\View\frmThongTinSinhVien.Designer.cs
+C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.View.frmQuaTrinhHocTapChiTiet.resources
