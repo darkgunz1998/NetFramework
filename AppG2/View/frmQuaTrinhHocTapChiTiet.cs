@@ -16,7 +16,7 @@ namespace AppG2.View
         HistoryLearning history;
         string maSinhVien;
         string pathHistoryLearningDataFile = null;
-        public frmQuaTrinhHocTapChiTiet(string pathHistoryLearningDataFile, HistoryLearning history = null, string maSinhVien = null )
+        public frmQuaTrinhHocTapChiTiet(string pathHistoryLearningDataFile, HistoryLearning history = null, string maSinhVien = null)
         {
             InitializeComponent();
             this.history = history;

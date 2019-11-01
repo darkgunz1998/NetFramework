@@ -1,15 +1,3 @@
-# AppG22019
-Project cho nhóm 2 năm học 2019 - 2020 - IT.HUSC
-Nhóm 2
-
-Nguyễn Đức Nghĩa (TN)
-
-Đỗ Thanh Tân
-
-Trần Phạm Quỳnh Như
-
-Ngô Hoàng Đức Phúc
-
-Trần Đắc Tính
-
-Lê Nguyễn Thủy Nhi
+Bài kiểm tra .Net Framework
+Nội dung: Tạo form contact
+Review: https://youtu.be/4dc1qe0wxpw

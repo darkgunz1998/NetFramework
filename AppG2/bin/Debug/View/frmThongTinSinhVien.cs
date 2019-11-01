@@ -158,7 +158,7 @@ namespace AppG2.View
         private void btnEdit_Click(object sender, EventArgs e)
         {
             var history = bdsQuaTrinhHocTap.Current as HistoryLearning;
-            if(history != null)
+            if (history != null)
             {
                 var f = new frmQuaTrinhHocTapChiTiet(pathHistoryLearningDataFile, history, null);
                 if (f.ShowDialog() == DialogResult.OK)
@@ -166,13 +166,13 @@ namespace AppG2.View
                     loadDataGridView(txtMaSV.Text);
                     //Tiến hành nạp lại dữ liệu lên lưới
                 }
-            }          
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             var f = new frmQuaTrinhHocTapChiTiet(pathHistoryLearningDataFile, null, txtMaSV.Text);
-            if( f.ShowDialog() == DialogResult.OK)
+            if (f.ShowDialog() == DialogResult.OK)
             {
                 loadDataGridView(txtMaSV.Text);
                 //Tiến hành nạp lại dữ liệu lên lưới

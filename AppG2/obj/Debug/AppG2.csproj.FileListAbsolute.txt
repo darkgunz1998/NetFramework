@@ -14,3 +14,6 @@ C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\bin\Debug\View\frm
 C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\bin\Debug\View\frmThongTinSinhVien.cs
 C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\bin\Debug\View\frmThongTinSinhVien.Designer.cs
 C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.View.frmQuaTrinhHocTapChiTiet.resources
+C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.View.frmContact.resources
+C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.View.frmContactChiTiet.resources
+C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\bin\Debug\Data\contact.txt
