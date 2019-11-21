@@ -128,37 +128,11 @@ namespace AppG2.Controller
         public static void EditContactDB(Contact contact)
         {
             var db = new AppG2Context();
-            var cnt = db.ContactDbset.Where(e => e.ID == contact.ID).FirstOrDefault();
+            var cnt = db.ContactDbset.Find(contact.ID);
             cnt.NameContact = contact.NameContact;
             cnt.Email = contact.Email;
             cnt.Phone = contact.Phone;
             db.SaveChanges();
         }
-        //public static List<Contact> SearchContact(string pathDataFileContact, string key = null)
-        //{       
-        //    List<Contact> contacts = new List<Contact>();
-        //    if (File.Exists(pathDataFileContact))
-        //    {
-        //        string[] listLinesContact = File.ReadAllLines(pathDataFileContact);
-        //        foreach (var lineContact in listLinesContact)
-        //        {
-        //            var ls = lineContact.Split(new char[] { '#' });
-        //            if (ls[1].Contains(key) || ls[2].Contains(key) || ls[3].Contains(key))
-        //            {
-        //                Contact cont = new Contact
-        //                {
-        //                    ID = ls[0],
-        //                    NameContact = ls[1],
-        //                    Phone = ls[2],
-        //                    Email = ls[3]
-        //                };
-        //                contacts.Add(cont);
-
-        //            }
-        //        }
-        //        return contacts;
-        //    }
-        //    return null;
-        //}
     }
 }
