@@ -143,6 +143,14 @@ namespace AppG2.Controller
                 }
             }
         }
+        public static void DeleteHistoryLearningDB(string id)
+        {
+            var db = new AppG2Context();
+            var history = db.HistoryLearningDbset.Where(e => e.IDHistoryLearning == id).FirstOrDefault();
+            if (history != null)
+                db.HistoryLearningDbset.Remove(history);
+            db.SaveChanges();
+        }
         public static void EditHistoryLearning(HistoryLearning history, string pathHistoryLearningDataFile)
         {
             if (File.Exists(pathHistoryLearningDataFile))
@@ -169,6 +177,15 @@ namespace AppG2.Controller
                 }
             }
         }
+        public static void EditHistoryLearningDB(HistoryLearning history)
+        {
+            var db = new AppG2Context();
+            var ht = db.HistoryLearningDbset.Find(history.IDHistoryLearning);
+            ht.Address = history.Address;
+            ht.YearFrom = history.YearFrom;
+            ht.YearEnd = history.YearEnd;
+            db.SaveChanges();
+        }
         public static void CreateHistoryLearning(HistoryLearning history, string pathHistoryLearningDataFile)
         {
             if (File.Exists(pathHistoryLearningDataFile))
@@ -179,6 +196,13 @@ namespace AppG2.Controller
                 string contentHistory = history.IDHistoryLearning + "#" + history.YearFrom + "#" + history.YearEnd + "#" + history.Address + "#" + history.IDStudent;
                 File.AppendAllText(pathHistoryLearningDataFile, "\n" + contentHistory); //Append là thêm vào, chèn vào sau chuỗi có trước, thêm vào ở File nào, nội dung là gì                 
             }
+        }
+        public static void CreateHistoryLearningDB(HistoryLearning history)
+        {
+            var db = new AppG2Context();
+            history.IDHistoryLearning = Guid.NewGuid().ToString();
+            db.HistoryLearningDbset.Add(history);
+            db.SaveChanges();
         }
     }
 }

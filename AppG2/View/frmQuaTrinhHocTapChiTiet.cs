@@ -15,12 +15,12 @@ namespace AppG2.View
     {
         HistoryLearning history;
         string maSinhVien;
-        string pathHistoryLearningDataFile = null;
-        public frmQuaTrinhHocTapChiTiet(string pathHistoryLearningDataFile, HistoryLearning history = null, string maSinhVien = null)
+        //string pathHistoryLearningDataFile = null;
+        public frmQuaTrinhHocTapChiTiet(HistoryLearning history = null, string maSinhVien = null)
         {
             InitializeComponent();
             this.history = history;
-            this.pathHistoryLearningDataFile = pathHistoryLearningDataFile;
+            //this.pathHistoryLearningDataFile = pathHistoryLearningDataFile;
             if (history != null)
             {
                 //chinh sua
@@ -51,7 +51,7 @@ namespace AppG2.View
                 history.YearFrom = (int)numTuNam.Value;
                 history.YearEnd = (int)numDenNam.Value;
                 history.Address = txtNoiHoc.Text;
-                StudentService.EditHistoryLearning(history, pathHistoryLearningDataFile);
+                StudentService.EditHistoryLearningDB(history);
             }
             else
             {
@@ -61,7 +61,7 @@ namespace AppG2.View
                 hl.YearEnd = (int)numDenNam.Value;
                 hl.Address = txtNoiHoc.Text;
                 hl.IDStudent = this.maSinhVien;
-                StudentService.CreateHistoryLearning(hl, pathHistoryLearningDataFile);
+                StudentService.CreateHistoryLearningDB(hl);
             }
             MessageBox.Show("Đã cập nhật dữ liệu thành công");
             DialogResult = DialogResult.OK; // Đóng form

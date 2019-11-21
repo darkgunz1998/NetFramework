@@ -145,7 +145,7 @@ namespace AppG2.View
             {
                 // var historyLearning = (HistoryLearning)bdsQuaTrinhHocTap.Current; 2 cach
                 var historyLearning = bdsQuaTrinhHocTap.Current as HistoryLearning;
-                StudentService.DeleteHistoryLearning(historyLearning.IDHistoryLearning, pathHistoryLearningDataFile);
+                StudentService.DeleteHistoryLearningDB(historyLearning.IDHistoryLearning);
 
                 //delete in datagridview nếu chọn nhiều cái
                     /*foreach (DataGridViewRow item in dtgvQuaTrinhHocTap.SelectedRows)
@@ -163,7 +163,7 @@ namespace AppG2.View
             var history = bdsQuaTrinhHocTap.Current as HistoryLearning;
             if (history != null)
             {
-                var f = new frmQuaTrinhHocTapChiTiet(pathHistoryLearningDataFile, history, null);
+                var f = new frmQuaTrinhHocTapChiTiet(history, null);
                 if (f.ShowDialog() == DialogResult.OK)
                 {
                     loadDataGridView(txtMaSV.Text);
@@ -174,7 +174,7 @@ namespace AppG2.View
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            var f = new frmQuaTrinhHocTapChiTiet(pathHistoryLearningDataFile, null, txtMaSV.Text);
+            var f = new frmQuaTrinhHocTapChiTiet(null, txtMaSV.Text);
             if (f.ShowDialog() == DialogResult.OK)
             {
                 loadDataGridView(txtMaSV.Text);

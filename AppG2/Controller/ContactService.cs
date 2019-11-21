@@ -47,7 +47,7 @@ namespace AppG2.Controller
         public static List<Contact> GetContactDB(string key = null)
         {
             if (key == null) key = "";
-            return new AppG2Context().ContactDbset.Where(e => (e.NameContact.Contains(key)) || (e.Email.Contains(key)) || (e.Phone.Contains(key))).ToList();
+            return new AppG2Context().ContactDbset.Where(e => (e.NameContact.Contains(key)) || (e.Email.Contains(key)) || (e.Phone.Contains(key))).OrderBy(e => e.NameContact).ToList();
         }
 
         public static void DeleteContact(string id, string pathDataFileContact)
