@@ -112,7 +112,9 @@ namespace AppG2.View
         }
         private void loadDataGridView(string maSinhVien)
         {
-            var student = StudentService.GetStudent(pathStudentDataFile, pathHistoryLearningDataFile, maSinhVien);
+            //var student = StudentService.GetStudent(pathStudentDataFile, pathHistoryLearningDataFile, maSinhVien);
+            var student = StudentService.GetStudentDB(maSinhVien);
+
             bdsQuaTrinhHocTap.DataSource = null;
             dtgvQuaTrinhHocTap.AutoGenerateColumns = false; // bỏ tự động tạo theo tên trường
             if (student == null)
@@ -122,10 +124,11 @@ namespace AppG2.View
                 txtMaSV.Text = student.IDStudent;
                 txtTen.Text = student.FirstName;
                 txtHo.Text = student.LastName;
-                txtHo.Text = student.FirstName + " " + student.LastName;
+                txtTen.Text = student.FirstName;
                 txtQueQuan.Text = student.POB;
                 dtpNamSinh.Value = student.DOB;
                 cbGender.Checked = student.Gender == Model.Gender.Male;
+                //student.ListHistoryLearning = StudentService.GetHistoryLearning(student.IDStudent);
                 if (student.ListHistoryLearning != null)
                 {
                     bdsQuaTrinhHocTap.DataSource = student.ListHistoryLearning;

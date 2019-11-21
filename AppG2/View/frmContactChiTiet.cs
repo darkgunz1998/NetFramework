@@ -16,12 +16,12 @@ namespace AppG2.View
     public partial class frmContactChiTiet : Form
     {
         Model.Contact contact = null;
-        string pathDataFile = null;
-        public frmContactChiTiet(string pathDataFile, Model.Contact contact = null )
+        //string pathDataFile = null;
+        public frmContactChiTiet( Model.Contact contact = null )
         {
             InitializeComponent();
             this.contact = contact;
-            this.pathDataFile = pathDataFile;
+           // this.pathDataFile = pathDataFile;
             if (contact != null)
             {
                 this.Text = "Chỉnh sửa quá trình học tập";
@@ -49,7 +49,7 @@ namespace AppG2.View
                 contact.NameContact = txtName.Text;
                 contact.Email = txtEmail.Text;
                 contact.Phone = txtPhone.Text;
-                ContactService.EditContact(pathDataFile, contact);
+                ContactService.EditContactDB(contact);
             }
             else
             {
@@ -58,7 +58,7 @@ namespace AppG2.View
                 cont.NameContact = txtName.Text;
                 cont.Email = txtEmail.Text;
                 cont.Phone = txtPhone.Text;
-                ContactService.CreateContact(pathDataFile, cont);
+                ContactService.CreateContactDB(cont);
             }
             MessageBox.Show("Đã cập nhật dữ liệu thành công");
             DialogResult = DialogResult.OK; // Đóng form

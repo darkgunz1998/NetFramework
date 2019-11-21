@@ -44,6 +44,12 @@ namespace AppG2.Controller
 
             return null;
         }
+        public static List<Contact> GetContactDB(string key = null)
+        {
+            if (key == null) key = "";
+            return new AppG2Context().ContactDbset.Where(e => (e.NameContact.Contains(key)) || (e.Email.Contains(key)) || (e.Phone.Contains(key))).ToList();
+        }
+
         public static void DeleteContact(string id, string pathDataFileContact)
         {
             if (File.Exists(pathDataFileContact))
@@ -67,6 +73,14 @@ namespace AppG2.Controller
                 }
             }
         }
+        public static void DeleteContactDB(string id)
+        {
+            var db = new AppG2Context();
+            var contact = db.ContactDbset.Where(e => e.ID == id).FirstOrDefault();
+            if (contact != null)
+                db.ContactDbset.Remove(contact);
+            db.SaveChanges();
+        }
         public static void CreateContact(string pathDataFileContact, Contact contact)
         {
             if (File.Exists(pathDataFileContact))
@@ -77,6 +91,13 @@ namespace AppG2.Controller
                 string contentContact = contact.ID + "#" + contact.NameContact + "#" + contact.Phone + "#" + contact.Email;
                 File.AppendAllText(pathDataFileContact, "\n" + contentContact); //Append là thêm vào, chèn vào sau chuỗi có trước, thêm vào ở File nào, nội dung là gì                 
             }
+        }
+        public static void CreateContactDB( Contact contact)
+        {
+            var db = new AppG2Context();
+            contact.ID = Guid.NewGuid().ToString();
+            db.ContactDbset.Add(contact);
+            db.SaveChanges();
         }
         public static void EditContact(string pathDataFileContact, Contact contact)
         {
@@ -104,31 +125,40 @@ namespace AppG2.Controller
                 }
             }
         }
-        public static List<Contact> SearchContact(string pathDataFileContact, string key = null)
-        {       
-            List<Contact> contacts = new List<Contact>();
-            if (File.Exists(pathDataFileContact))
-            {
-                string[] listLinesContact = File.ReadAllLines(pathDataFileContact);
-                foreach (var lineContact in listLinesContact)
-                {
-                    var ls = lineContact.Split(new char[] { '#' });
-                    if (ls[1].Contains(key) || ls[2].Contains(key) || ls[3].Contains(key))
-                    {
-                        Contact cont = new Contact
-                        {
-                            ID = ls[0],
-                            NameContact = ls[1],
-                            Phone = ls[2],
-                            Email = ls[3]
-                        };
-                        contacts.Add(cont);
-
-                    }
-                }
-                return contacts;
-            }
-            return null;
+        public static void EditContactDB(Contact contact)
+        {
+            var db = new AppG2Context();
+            var cnt = db.ContactDbset.Where(e => e.ID == contact.ID).FirstOrDefault();
+            cnt.NameContact = contact.NameContact;
+            cnt.Email = contact.Email;
+            cnt.Phone = contact.Phone;
+            db.SaveChanges();
         }
+        //public static List<Contact> SearchContact(string pathDataFileContact, string key = null)
+        //{       
+        //    List<Contact> contacts = new List<Contact>();
+        //    if (File.Exists(pathDataFileContact))
+        //    {
+        //        string[] listLinesContact = File.ReadAllLines(pathDataFileContact);
+        //        foreach (var lineContact in listLinesContact)
+        //        {
+        //            var ls = lineContact.Split(new char[] { '#' });
+        //            if (ls[1].Contains(key) || ls[2].Contains(key) || ls[3].Contains(key))
+        //            {
+        //                Contact cont = new Contact
+        //                {
+        //                    ID = ls[0],
+        //                    NameContact = ls[1],
+        //                    Phone = ls[2],
+        //                    Email = ls[3]
+        //                };
+        //                contacts.Add(cont);
+
+        //            }
+        //        }
+        //        return contacts;
+        //    }
+        //    return null;
+        //}
     }
 }

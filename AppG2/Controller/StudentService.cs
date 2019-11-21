@@ -94,6 +94,15 @@ namespace AppG2.Controller
             }
             return null;
         }
+        public static Student GetStudentDB(string idStudent)
+        {
+            var db = new AppG2Context();
+            return db.StudentDbset.Where(e => e.IDStudent == idStudent).FirstOrDefault();
+        }
+        public static List<HistoryLearning> GetHistoryLearning(string idStudent)
+        {
+            return new AppG2Context().HistoryLearningDbset.Where(e => e.IDStudent == idStudent).OrderBy(e=>e.YearFrom).ToList();
+        }
         //Xóa kiểu di chuyển sang file khác, xóa file cũ
         /*public static void DeleteHistoryLearning(string id, string pathHistoryLearningDataFile)
         {

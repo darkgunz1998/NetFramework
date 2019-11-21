@@ -26,7 +26,7 @@ namespace AppG2.View
             
             bdsContact.DataSource = null;
             dtgvContact.AutoGenerateColumns = false;
-            List<Model.Contact> lstContacts  = ContactService.GetContact(pathDataFile, null);
+            List<Model.Contact> lstContacts  = ContactService.GetContactDB(null);
             if (lstContacts == null)
                 throw new Exception("Chua co thong tin");
             else
@@ -43,7 +43,7 @@ namespace AppG2.View
             {
                 // var historyLearning = (HistoryLearning)bdsQuaTrinhHocTap.Current; 2 cach
                 var contact = bdsContact.Current as Model.Contact;
-                ContactService.DeleteContact(contact.ID, pathDataFile);
+                ContactService.DeleteContactDB(contact.ID);
 
                 //delete in datagridview nếu chọn nhiều cái
                 /*foreach (DataGridViewRow item in dtgvQuaTrinhHocTap.SelectedRows)
@@ -58,7 +58,7 @@ namespace AppG2.View
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            var f = new frmContactChiTiet(pathDataFile, null);
+            var f = new frmContactChiTiet( null);
             if (f.ShowDialog() == DialogResult.OK)
             {
                 loadContact();
@@ -71,7 +71,7 @@ namespace AppG2.View
             var contact = bdsContact.Current as Model.Contact;
             if (contact != null)
             {
-                 var f = new frmContactChiTiet(pathDataFile, contact);
+                 var f = new frmContactChiTiet( contact);
                 if (f.ShowDialog() == DialogResult.OK)
                 {
                     loadContact();
@@ -89,7 +89,7 @@ namespace AppG2.View
         {
             bdsContact.DataSource = null;
             dtgvContact.AutoGenerateColumns = false;
-            List<Model.Contact> lstContacts = ContactService.GetContact(pathDataFile, txtSearch.Text);
+            List<Model.Contact> lstContacts = ContactService.GetContactDB(txtSearch.Text);
             if (lstContacts == null)
                 throw new Exception("Chua co thong tin");
             else
