@@ -62,17 +62,14 @@
   <ItemGroup>
     <Compile Include="Controller\ContactService.cs" />
     <Compile Include="Controller\StudentService.cs" />
-    <Compile Include="Migrations\201911080138525_asda.cs" />
-    <Compile Include="Migrations\201911080138525_asda.designer.cs">
-      <DependentUpon>201911080138525_asda.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911211358089_akskdas.cs" />
-    <Compile Include="Migrations\201911211358089_akskdas.designer.cs">
-      <DependentUpon>201911211358089_akskdas.cs</DependentUpon>
+    <Compile Include="Migrations\201911220107355_ksaklla.cs" />
+    <Compile Include="Migrations\201911220107355_ksaklla.designer.cs">
+      <DependentUpon>201911220107355_ksaklla.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\AppG2Context.cs" />
     <Compile Include="Model\Contact.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="View\frmContact.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +81,12 @@
     </Compile>
     <Compile Include="View\frmContactChiTiet.Designer.cs">
       <DependentUpon>frmContactChiTiet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="View\frmQuaTrinhHocTapChiTiet.cs">
       <SubType>Form</SubType>
@@ -109,17 +112,17 @@
     <Compile Include="Model\Student.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Migrations\201911080138525_asda.resx">
-      <DependentUpon>201911080138525_asda.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911211358089_akskdas.resx">
-      <DependentUpon>201911211358089_akskdas.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911220107355_ksaklla.resx">
+      <DependentUpon>201911220107355_ksaklla.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmContact.resx">
       <DependentUpon>frmContact.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmContactChiTiet.resx">
       <DependentUpon>frmContactChiTiet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmQuaTrinhHocTapChiTiet.resx">
       <DependentUpon>frmQuaTrinhHocTapChiTiet.cs</DependentUpon>

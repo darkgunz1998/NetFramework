@@ -3,10 +3,34 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class asda : DbMigration
+    public partial class ksaklla : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Contacts",
+                c => new
+                    {
+                        ID = c.String(nullable: false, maxLength: 128),
+                        NameContact = c.String(),
+                        Phone = c.String(),
+                        Email = c.String(),
+                        UserName = c.String(maxLength: 128),
+                    })
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.Users", t => t.UserName)
+                .Index(t => t.UserName);
+            
+            CreateTable(
+                "dbo.Users",
+                c => new
+                    {
+                        UserName = c.String(nullable: false, maxLength: 128),
+                        FullName = c.String(),
+                        PassWord = c.String(),
+                    })
+                .PrimaryKey(t => t.UserName);
+            
             CreateTable(
                 "dbo.HistoryLearnings",
                 c => new
@@ -39,9 +63,13 @@
         public override void Down()
         {
             DropForeignKey("dbo.HistoryLearnings", "IDStudent", "dbo.Students");
+            DropForeignKey("dbo.Contacts", "UserName", "dbo.Users");
             DropIndex("dbo.HistoryLearnings", new[] { "IDStudent" });
+            DropIndex("dbo.Contacts", new[] { "UserName" });
             DropTable("dbo.Students");
             DropTable("dbo.HistoryLearnings");
+            DropTable("dbo.Users");
+            DropTable("dbo.Contacts");
         }
     }
 }

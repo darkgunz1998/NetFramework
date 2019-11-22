@@ -22,5 +22,5 @@ C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\bin\Debug\EntityFr
 C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\bin\Debug\EntityFramework.xml
 C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.csproj.CopyComplete
-C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.Migrations.asda.resources
-C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.Migrations.akskdas.resources
+C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.Migrations.ksaklla.resources
+C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.View.frmLogin.resources

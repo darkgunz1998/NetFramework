@@ -44,10 +44,14 @@ namespace AppG2.Controller
 
             return null;
         }
-        public static List<Contact> GetContactDB(string key = null)
+        public static List<Contact> GetContactDB(User user, string key = null)
         {
+            var db = new AppG2Context();
+           
             if (key == null) key = "";
-            return new AppG2Context().ContactDbset.Where(e => (e.NameContact.Contains(key)) || (e.Email.Contains(key)) || (e.Phone.Contains(key))).OrderBy(e => e.NameContact).ToList();
+            return db.ContactDbset.Where(e => (e.UserName == user.UserName) && ((e.NameContact.Contains(key)) || (e.Email.Contains(key)) || (e.Phone.Contains(key)))).OrderBy(e => e.NameContact).ToList();
+            
+           
         }
 
         public static void DeleteContact(string id, string pathDataFileContact)
@@ -133,6 +137,20 @@ namespace AppG2.Controller
             cnt.Email = contact.Email;
             cnt.Phone = contact.Phone;
             db.SaveChanges();
+        }
+        public static List<Contact> GetContactDBFromCharacter(string character)
+        {
+            var db = new AppG2Context();
+            var lst = db.ContactDbset.Where(e => (string.Compare(e.NameContact, character) >= 0)).OrderBy(e => e.NameContact).ToList();
+            return lst;
+        }
+        public static Boolean CheckLogin(User user)
+        {
+            var db = new AppG2Context();
+            var us = db.UserDbset.Where(e => (e.UserName == user.UserName) && (e.PassWord == user.PassWord)).FirstOrDefault();
+            if (us != null)
+                return true;
+            return false;
         }
     }
 }

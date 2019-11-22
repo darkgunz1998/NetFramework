@@ -7,13 +7,13 @@ namespace AppG2.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.3.0")]
-    public sealed partial class akskdas : IMigrationMetadata
+    public sealed partial class ksaklla : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(akskdas));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ksaklla));
         
         string IMigrationMetadata.Id
         {
-            get { return "201911211358089_akskdas"; }
+            get { return "201911220107355_ksaklla"; }
         }
         
         string IMigrationMetadata.Source

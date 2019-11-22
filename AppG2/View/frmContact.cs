@@ -9,24 +9,29 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AppG2.Model;
 using AppG2.Controller;
+using System.IO;
+using System.Text.RegularExpressions;
 
 namespace AppG2.View
 {
     public partial class frmContact : Form
     {
         string pathDataFile;
-        public frmContact()
+        User usr = new User();
+        public frmContact(User user)
         {
             InitializeComponent();
             pathDataFile = Application.StartupPath + @"\Data\contact.txt";
-            loadContact();
+            usr = user;
+            loadContact(user);
+           
         }
-        private void loadContact()
+        private void loadContact(User user)
         {
             
             bdsContact.DataSource = null;
             dtgvContact.AutoGenerateColumns = false;
-            List<Model.Contact> lstContacts  = ContactService.GetContactDB(null);
+            List<Model.Contact> lstContacts  = ContactService.GetContactDB(user, null);
             if (lstContacts == null)
                 throw new Exception("Chua co thong tin");
             else
@@ -34,6 +39,7 @@ namespace AppG2.View
                 bdsContact.DataSource = lstContacts;
             }
             dtgvContact.DataSource = bdsContact;
+            AddListCharactor();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -52,16 +58,18 @@ namespace AppG2.View
                 }*/
                 //delete in datagridview nếu chỉ lấy 1 cái là cái đầu tiên mình chọn xóa
                 dtgvContact.Rows.RemoveAt(dtgvContact.SelectedRows[0].Index);
+              
             }
             else MessageBox.Show("Bạn đã không xóa", "Thông báo");
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            var f = new frmContactChiTiet( null);
+            var f = new frmContactChiTiet(usr, null);
             if (f.ShowDialog() == DialogResult.OK)
             {
-                loadContact();
+                loadContact(usr);
+                
                 //Tiến hành nạp lại dữ liệu lên lưới
             }
         }
@@ -71,10 +79,11 @@ namespace AppG2.View
             var contact = bdsContact.Current as Model.Contact;
             if (contact != null)
             {
-                 var f = new frmContactChiTiet( contact);
+                 var f = new frmContactChiTiet(usr, contact);
                 if (f.ShowDialog() == DialogResult.OK)
                 {
-                    loadContact();
+                    loadContact(usr);
+                    
                     //Tiến hành nạp lại dữ liệu lên lưới
                 }
             }
@@ -89,7 +98,7 @@ namespace AppG2.View
         {
             bdsContact.DataSource = null;
             dtgvContact.AutoGenerateColumns = false;
-            List<Model.Contact> lstContacts = ContactService.GetContactDB(txtSearch.Text);
+            List<Contact> lstContacts = ContactService.GetContactDB(usr ,txtSearch.Text);
             if (lstContacts == null)
                 throw new Exception("Chua co thong tin");
             else
@@ -98,5 +107,65 @@ namespace AppG2.View
             }
             dtgvContact.DataSource = bdsContact;
         }
+        private void AddListCharactor()
+        {
+            flpanel.Controls.Clear();
+            List<Contact> lstContacts = ContactService.GetContactDB(usr);
+            HashSet<string> lstCharacter = new HashSet<string>();
+            foreach(var contact in lstContacts)
+                lstCharacter.Add(contact.Character);
+            foreach(var character in lstCharacter)
+            {
+                Label label = new Label();
+                label.Text = character;
+                label.Click += new EventHandler(label_click);
+                flpanel.Controls.Add(label);
+            }
+        }
+        private void label_click(object sender, EventArgs e)
+        {
+            var character = ((Label)sender);
+            List<Contact> lstContacts = ContactService.GetContactDBFromCharacter(character.Text);
+            bdsContact.DataSource = lstContacts;
+            dtgvContact.DataSource = bdsContact;
+        }
+
+        private void btnimport_Click(object sender, EventArgs e)
+        {
+            var db = new AppG2Context();
+            OpenFileDialog openfileDialog = new OpenFileDialog();
+            openfileDialog.Title = "Chọn file csv";
+            openfileDialog.Filter = "File csv(*.csv)|*.csv";
+            if (openfileDialog.ShowDialog() == DialogResult.OK)
+            {
+                if (File.Exists(openfileDialog.FileName))
+                {
+                    var lstcnt = File.ReadAllLines(openfileDialog.FileName);
+                    foreach (var contact in lstcnt)
+                    {
+                        var ls = contact.Split(new char[] { ',' });
+                        Contact cnt = new Contact();
+
+                        cnt.ID = Guid.NewGuid().ToString();
+                        cnt.NameContact = ls[0];
+                        cnt.Phone = ls[1];
+                        cnt.Email = ls[2];
+                        cnt.UserName = usr.UserName;
+                        db.ContactDbset.Add(cnt);
+                        
+                    }
+                    db.SaveChanges();
+                    loadContact(usr);
+                    MessageBox.Show("Đọc file bị sai", "Thông báo");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Lỗi khi mở file", "Thông báo");
+            }
+        }
+
     }
+    
 }

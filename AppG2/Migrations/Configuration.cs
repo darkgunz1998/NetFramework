@@ -67,39 +67,59 @@
                     }
                 );
             };
-
+            context.UserDbset.AddOrUpdate(
+                new User
+                {
+                    UserName = "a",
+                    FullName = "Nguyen Duc Nghia",
+                    PassWord = "1"
+                },
+                new User
+                {
+                    UserName = "b",
+                    FullName = "Le van dung",
+                    PassWord = "1"
+                }
+                );
+            context.SaveChanges();
             context.ContactDbset.AddOrUpdate(
                new Contact
                {
                    ID = "1",
                    NameContact = "Ada Loveface",
                    Email = "ducnghia@gmail.com",
-                   Phone = "0123123123"
+                   Phone = "0123123123",
+                   UserName = "a"
                },
                new Contact
                {
                    ID = "2",
                    NameContact = "Grace Hopper",
                    Email = "ankut@gmail.com",
-                   Phone = "01283813221"
+                   Phone = "01283813221",
+                   UserName = "b"
                },
                new Contact
                {
                    ID = "3",
                    NameContact = "Margaret Hamiton",
                    Email = "anheo@gmail.com",
-                   Phone = "04891231233"
+                   Phone = "04891231233",
+                   UserName = "a"
                },
                new Contact
                {
                    ID = "4",
                    NameContact = "Joan Clarke",
                    Email = "lniancol@gmail.com",
-                   Phone = "0123912312"
+                   Phone = "0123912312",
+                   UserName = "b"
                }
                );
 
             context.SaveChanges();
+
+            
         }
     }
 }

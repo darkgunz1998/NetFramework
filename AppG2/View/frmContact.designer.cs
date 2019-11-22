@@ -42,7 +42,9 @@
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.flpanel = new System.Windows.Forms.FlowLayoutPanel();
             this.bdsContact = new System.Windows.Forms.BindingSource(this.components);
+            this.btnimport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvContact)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsContact)).BeginInit();
             this.SuspendLayout();
@@ -168,13 +170,33 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // flpanel
+            // 
+            this.flpanel.Location = new System.Drawing.Point(721, 136);
+            this.flpanel.Name = "flpanel";
+            this.flpanel.Size = new System.Drawing.Size(26, 295);
+            this.flpanel.TabIndex = 8;
+            // 
+            // btnimport
+            // 
+            this.btnimport.Location = new System.Drawing.Point(274, 120);
+            this.btnimport.Margin = new System.Windows.Forms.Padding(4);
+            this.btnimport.Name = "btnimport";
+            this.btnimport.Size = new System.Drawing.Size(100, 28);
+            this.btnimport.TabIndex = 9;
+            this.btnimport.Text = "Import";
+            this.btnimport.UseVisualStyleBackColor = true;
+            this.btnimport.Click += new System.EventHandler(this.btnimport_Click);
+            // 
             // frmContact
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(751, 479);
+            this.ClientSize = new System.Drawing.Size(858, 479);
             this.ControlBox = false;
+            this.Controls.Add(this.btnimport);
+            this.Controls.Add(this.flpanel);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtgvContact);
@@ -209,5 +231,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.FlowLayoutPanel flpanel;
+        private System.Windows.Forms.Button btnimport;
     }
 }

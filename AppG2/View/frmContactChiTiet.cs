@@ -17,14 +17,16 @@ namespace AppG2.View
     {
         Model.Contact contact = null;
         //string pathDataFile = null;
-        public frmContactChiTiet( Model.Contact contact = null )
+        User usr = new User();
+        public frmContactChiTiet( User user, Model.Contact contact = null )
         {
             InitializeComponent();
             this.contact = contact;
+            usr = user;
            // this.pathDataFile = pathDataFile;
             if (contact != null)
             {
-                this.Text = "Chỉnh sửa quá trình học tập";
+                this.Text = "Chỉnh sửa danh bạ";
                 txtName.Text = contact.NameContact;
                 txtPhone.Text = contact.Phone;
                 txtEmail.Text = contact.Email;
@@ -32,7 +34,7 @@ namespace AppG2.View
             }
             else
             {
-                this.Text = "Thêm quá trình học tập";
+                this.Text = "Thêm quá danh bạ";
             }
         }
         
@@ -49,6 +51,7 @@ namespace AppG2.View
                 contact.NameContact = txtName.Text;
                 contact.Email = txtEmail.Text;
                 contact.Phone = txtPhone.Text;
+                contact.UserName = usr.UserName;
                 ContactService.EditContactDB(contact);
             }
             else
@@ -58,6 +61,7 @@ namespace AppG2.View
                 cont.NameContact = txtName.Text;
                 cont.Email = txtEmail.Text;
                 cont.Phone = txtPhone.Text;
+                cont.UserName = usr.UserName;
                 ContactService.CreateContactDB(cont);
             }
             MessageBox.Show("Đã cập nhật dữ liệu thành công");

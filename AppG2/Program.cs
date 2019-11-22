@@ -17,7 +17,7 @@ namespace AppG2
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new frmThongTinSinhVien("16T1021104"));
-            Application.Run(new frmContact());
+            Application.Run(new frmLogin());
         }
     }
 }
