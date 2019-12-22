@@ -403,6 +403,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmThongTinSinhVien";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Thông tin sinh viên";
             this.Load += new System.EventHandler(this.frmThongTinSinhVien_Load);
             this.panel1.ResumeLayout(false);

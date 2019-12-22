@@ -96,12 +96,17 @@ namespace AppG2.Controller
                 File.AppendAllText(pathDataFileContact, "\n" + contentContact); //Append là thêm vào, chèn vào sau chuỗi có trước, thêm vào ở File nào, nội dung là gì                 
             }
         }
-        public static void CreateContactDB( Contact contact)
+        public static Boolean CreateContactDB( Contact contact)
         {
             var db = new AppG2Context();
             contact.ID = Guid.NewGuid().ToString();
-            db.ContactDbset.Add(contact);
-            db.SaveChanges();
+            if (!ExistPhoneOrEmail(contact.Phone, contact.Email, contact.UserName, contact.ID))
+            {
+                db.ContactDbset.Add(contact);
+                db.SaveChanges();
+                return true;
+            }
+            return false;
         }
         public static void EditContact(string pathDataFileContact, Contact contact)
         {
@@ -129,14 +134,20 @@ namespace AppG2.Controller
                 }
             }
         }
-        public static void EditContactDB(Contact contact)
+        public static Boolean EditContactDB(Contact contact)
         {
             var db = new AppG2Context();
-            var cnt = db.ContactDbset.Find(contact.ID);
+            var cnt = db.ContactDbset.Where(e => (e.ID == contact.ID) ).FirstOrDefault();
             cnt.NameContact = contact.NameContact;
             cnt.Email = contact.Email;
             cnt.Phone = contact.Phone;
-            db.SaveChanges();
+            if(!ExistPhoneOrEmail(cnt.Phone, cnt.Email, cnt.UserName, cnt.ID))
+            {
+                db.SaveChanges();
+                return true;
+            }
+              
+            return false;
         }
         public static List<Contact> GetContactDBFromCharacter(string character)
         {
@@ -149,6 +160,14 @@ namespace AppG2.Controller
             var db = new AppG2Context();
             var us = db.UserDbset.Where(e => (e.UserName == user.UserName) && (e.PassWord == user.PassWord)).FirstOrDefault();
             if (us != null)
+                return true;
+            return false;
+        }
+        public static Boolean ExistPhoneOrEmail(string phone,string email, string username, string idcontact)
+        {
+            var db = new AppG2Context();
+            var ct = db.ContactDbset.Where(e => (e.ID != idcontact) && (((e.Phone == phone) || (e.Email == email)) && e.UserName == username)).FirstOrDefault();
+            if (ct != null)
                 return true;
             return false;
         }

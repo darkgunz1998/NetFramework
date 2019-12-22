@@ -52,7 +52,9 @@ namespace AppG2.View
                 contact.Email = txtEmail.Text;
                 contact.Phone = txtPhone.Text;
                 contact.UserName = usr.UserName;
-                ContactService.EditContactDB(contact);
+                if (!ContactService.EditContactDB(contact))
+                    MessageBox.Show("Đã tồn tại số điện thoại hoặc email", "Thông báo");
+                else DialogResult = DialogResult.OK;
             }
             else
             {
@@ -62,10 +64,11 @@ namespace AppG2.View
                 cont.Email = txtEmail.Text;
                 cont.Phone = txtPhone.Text;
                 cont.UserName = usr.UserName;
-                ContactService.CreateContactDB(cont);
+                if(!ContactService.CreateContactDB(cont))
+                    MessageBox.Show("Đã tồn tại số điện thoại hoặc email", "Thông báo");
+                else DialogResult = DialogResult.OK;
             }
-            MessageBox.Show("Đã cập nhật dữ liệu thành công");
-            DialogResult = DialogResult.OK; // Đóng form
+             // Đóng form
         }
 
         private void txtEmail_Leave(object sender, EventArgs e)

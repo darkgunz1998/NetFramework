@@ -19,7 +19,7 @@ namespace AppG2.Model
         {
             get
             {
-                return NameContact[0].ToString().ToUpper();
+                 return NameContact[0].ToString().ToUpper();
             }
         }
         

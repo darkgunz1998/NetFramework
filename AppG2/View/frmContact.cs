@@ -132,6 +132,7 @@ namespace AppG2.View
 
         private void btnimport_Click(object sender, EventArgs e)
         {
+            var count = 0;
             var db = new AppG2Context();
             OpenFileDialog openfileDialog = new OpenFileDialog();
             openfileDialog.Title = "Chọn file csv";
@@ -151,19 +152,24 @@ namespace AppG2.View
                         cnt.Phone = ls[1];
                         cnt.Email = ls[2];
                         cnt.UserName = usr.UserName;
-                        db.ContactDbset.Add(cnt);
+                        if(!ContactService.ExistPhoneOrEmail(cnt.Phone, cnt.Email, cnt.UserName, cnt.ID))
+                        {
+                            db.ContactDbset.Add(cnt);
+                            count++;
+                        }
+                       
                         
                     }
                     db.SaveChanges();
                     loadContact(usr);
-                    MessageBox.Show("Đọc file bị sai", "Thông báo");
+                    MessageBox.Show("Import thành công " + count + " giá trị" , "Thông báo");
                 }
-
+                else
+                {
+                    MessageBox.Show("Lỗi khi mở file", "Thông báo");
+                }
             }
-            else
-            {
-                MessageBox.Show("Lỗi khi mở file", "Thông báo");
-            }
+            
         }
 
     }

@@ -99,6 +99,59 @@ namespace AppG2.Controller
             var db = new AppG2Context();
             return db.StudentDbset.Where(e => e.IDStudent == idStudent).FirstOrDefault();
         }
+        public static List<Student> GetAllStudentDB(string key = null)
+        {
+            var db = new AppG2Context();
+
+            if (key == null) key = "";
+            return db.StudentDbset.Where(e=>e.FirstName.Contains(key) || e.LastName.Contains(key) || e.POB.Contains(key)).ToList();
+        }
+        //xóa student 
+        public static void DeleteStudent(string idStudent)
+        {
+            var db = new AppG2Context();
+
+            var lsDiem = db.DiemDbset.Where(e => e.IDStudent == idStudent).ToList();
+            foreach(var diem in lsDiem)
+            {
+                db.DiemDbset.Remove(diem);
+            }
+
+            var lsHistory = db.HistoryLearningDbset.Where(e => e.IDStudent == idStudent).ToList();
+            foreach (var history in lsHistory)
+            {
+                db.HistoryLearningDbset.Remove(history);
+            }
+
+            var student = db.StudentDbset.Where(e => e.IDStudent == idStudent).FirstOrDefault();
+            if (student != null)
+                db.StudentDbset.Remove(student);
+            db.SaveChanges();
+        }
+        //thêm student
+        public static void CreateStudentDB(Student student)
+        {
+            var db = new AppG2Context();
+            var std = db.StudentDbset.Find(student.IDStudent);
+            if(std == null) { 
+                db.StudentDbset.Add(student);
+                db.SaveChanges();
+            }
+        }
+        //xóa student
+        public static void EditStudentDB(Student student)
+        {
+            var db = new AppG2Context();
+            var std = db.StudentDbset.Find(student.IDStudent);
+           
+            std.FirstName = student.FirstName;
+            std.LastName = student.LastName;
+            std.Gender = student.Gender;
+            std.DOB = student.DOB;
+            std.POB = student.POB;
+            std.IDKhoa = student.IDKhoa;
+            db.SaveChanges();
+        }
         public static List<HistoryLearning> GetHistoryLearning(string idStudent)
         {
             return new AppG2Context().HistoryLearningDbset.Where(e => e.IDStudent == idStudent).OrderBy(e=>e.YearFrom).ToList();

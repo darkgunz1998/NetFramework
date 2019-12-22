@@ -48,6 +48,8 @@
             // 
             // txtusername
             // 
+            this.txtusername.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtusername.Location = new System.Drawing.Point(368, 146);
             this.txtusername.Name = "txtusername";
             this.txtusername.Size = new System.Drawing.Size(206, 22);
@@ -55,6 +57,8 @@
             // 
             // txtpassword
             // 
+            this.txtpassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtpassword.Location = new System.Drawing.Point(368, 232);
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.PasswordChar = '*';
@@ -74,6 +78,7 @@
             // 
             // btnlogin
             // 
+            this.btnlogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnlogin.Location = new System.Drawing.Point(470, 318);
             this.btnlogin.Name = "btnlogin";
             this.btnlogin.Size = new System.Drawing.Size(104, 48);
@@ -88,7 +93,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(341, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 52);
+            this.label1.Size = new System.Drawing.Size(128, 51);
             this.label1.TabIndex = 5;
             this.label1.Text = "Login";
             // 
@@ -104,6 +109,7 @@
             this.Controls.Add(this.txtusername);
             this.Controls.Add(this.lblusername);
             this.Name = "frmLogin";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.ResumeLayout(false);

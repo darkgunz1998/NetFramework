@@ -24,3 +24,10 @@ C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\bin\Debug\EntityFr
 C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.csproj.CopyComplete
 C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.Migrations.ksaklla.resources
 C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.View.frmLogin.resources
+C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.View.frmDanhSachSinhVien.resources
+C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.Migrations.kaskdsak.resources
+C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.Migrations.aksdksadksa.resources
+C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.Migrations.aksdksadksaád.resources
+C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.Migrations.aksdksadksaádjjj.resources
+C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.View.frmDanhSachSinhVienChiTiet.resources
+C:\Users\Owner\Desktop\.NETFramework\AppG2\NetFramework\AppG2\obj\Debug\AppG2.View.frmBoSungDiem.resources

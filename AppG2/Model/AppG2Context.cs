@@ -19,5 +19,10 @@ namespace AppG2.Model
         public DbSet<HistoryLearning> HistoryLearningDbset { get; set; }
         public DbSet<Contact> ContactDbset { get; set; }
         public DbSet<User> UserDbset { get; set; }
+
+        public DbSet<Khoa> KhoaDbset { get; set; }
+        public DbSet<Diem> DiemDbset { get; set; }
+        public DbSet<MonHoc> MonHocDbset { get; set; }
+
     }
 }

@@ -27,7 +27,8 @@
                     LastName = "Nguyễn",
                     DOB = new DateTime(1998, 5, 17),
                     Gender = Gender.Male,
-                    POB = "Thừa Thiên Huế"
+                    POB = "Thừa Thiên Huế",
+                    IDKhoa = "3"
                 },
                 new Student
                 {
@@ -36,7 +37,8 @@
                     LastName = "Ngkja",
                     DOB = new DateTime(1998, 6, 9),
                     Gender = Gender.FeMale,
-                    POB = "Quảng Ngãi"
+                    POB = "Quảng Ngãi",
+                    IDKhoa = "2"
                 });
            
             context.SaveChanges();
@@ -119,7 +121,89 @@
 
             context.SaveChanges();
 
-            
+            context.KhoaDbset.AddOrUpdate(
+                new Khoa
+                {
+                    IDKhoa = "1",
+                    TenKhoa = "Văn"
+                },
+                new Khoa
+                {
+                    IDKhoa = "2",
+                    TenKhoa = "Vật lý"
+                },
+                new Khoa
+                {
+                    IDKhoa = "3",
+                    TenKhoa = "CNTT"
+                }
+                );
+            context.SaveChanges();
+            context.MonHocDbset.AddOrUpdate(
+                new MonHoc
+                {
+                    IDMonHoc = "1",
+                    TenMonHoc = "Văn học CĐ",
+                    IDKhoa = "1"
+                },
+                new MonHoc
+                {
+                    IDMonHoc = "2",
+                    TenMonHoc = "Văn học HĐ",
+                    IDKhoa = "1"
+                },
+                new MonHoc
+                {
+                    IDMonHoc = "3",
+                    TenMonHoc = "Vật lý trị liệu",
+                    IDKhoa = "2"
+                },
+                new MonHoc
+                {
+                    IDMonHoc = "4",
+                    TenMonHoc = "Định lý newton 4",
+                    IDKhoa = "2"
+                },
+                new MonHoc
+                {
+                    IDMonHoc = "5",
+                    TenMonHoc = "Nghỉ ngơi",
+                    IDKhoa = "3"
+                },
+                new MonHoc
+                {
+                    IDMonHoc = "6",
+                    TenMonHoc = "Kĩ thuật lập trình",
+                    IDKhoa = "3"
+                }
+                );
+            context.SaveChanges();
+            context.DiemDbset.AddOrUpdate(
+                new Diem
+                {
+                    IDStudent = "16T1021104",
+                    IDMonHoc = "5",
+                    DiemMonHoc = 10
+                },
+                new Diem
+                {
+                    IDStudent = "16T1021104",
+                    IDMonHoc = "6",
+                    DiemMonHoc = 9.3
+                },
+                new Diem
+                {
+                    IDStudent = "16T1021100",
+                    IDMonHoc = "3",
+                    DiemMonHoc = 5
+                },
+                new Diem
+                {
+                    IDStudent = "16T1021100",
+                    IDMonHoc = "4",
+                    DiemMonHoc = 7.5
+                }
+                );
         }
     }
 }
